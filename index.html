@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scenario-Aware Biomedical Monitoring</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= LOGIN ================= -->
+
+<div id="loginPage" class="login-page">
+
+    <div class="login-left">
+
+        <div class="brand">
+            <div class="brand-logo">SA</div>
+
+            <div>
+                <h3>ScenarioAware</h3>
+                <span>Biomedical Monitoring</span>
+            </div>
+        </div>
+
+        <div class="login-content">
+
+            <span class="tag">VLSI • SYSTEMVERILOG • UVM</span>
+
+            <h1>
+                Understand the
+                <span>scenario</span>,
+                not just the value.
+            </h1>
+
+            <p>
+                A scenario-aware biomedical monitoring interface
+                designed for real-time visualization of the
+                SystemVerilog DUT.
+            </p>
+
+            <div class="feature-row">
+
+                <div>
+                    <b>♥</b>
+                    <span>Heart Rate</span>
+                </div>
+
+                <div>
+                    <b>◉</b>
+                    <span>SpO₂</span>
+                </div>
+
+                <div>
+                    <b>◌</b>
+                    <span>Blood Pressure</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="login-right">
+
+        <div class="login-card">
+
+            <div class="small-logo">SA</div>
+
+            <h2>Welcome back</h2>
+
+            <p class="login-subtitle">
+                Sign in to open the monitoring dashboard
+            </p>
+
+            <form id="loginForm">
+
+                <label>Email</label>
+
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    required
+                >
+
+                <label>Password</label>
+
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="••••••••"
+                    required
+                >
+
+                <button type="submit" class="primary-btn">
+                    Open Dashboard →
+                </button>
+
+            </form>
+
+            <p class="demo-login">
+                Demo login: any valid email + password
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<div id="dashboardPage" class="dashboard-page hidden">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="side-brand">
+
+            <div class="brand-logo">SA</div>
+
+            <div>
+                <b>ScenarioAware</b>
+                <small>Biomedical Controller</small>
+            </div>
+
+        </div>
+
+
+        <div class="connection">
+
+            <span class="connection-dot"></span>
+
+            <div>
+                <b>Simulation Online</b>
+                <small>SystemVerilog DUT</small>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <button class="nav-btn active" data-page="dashboard">
+                <span>⌂</span>
+                Dashboard
+            </button>
+
+            <button class="nav-btn" data-page="live">
+                <span>◉</span>
+                Live Monitoring
+            </button>
+
+            <button class="nav-btn" data-page="history">
+                <span>▤</span>
+                Person History
+            </button>
+
+            <button class="nav-btn" data-page="alerts">
+                <span>!</span>
+                Alert Center
+            </button>
+
+            <button class="nav-btn" data-page="architecture">
+                <span>◇</span>
+                System Architecture
+            </button>
+
+        </nav>
+
+
+        <div class="side-bottom">
+
+            <div class="coverage-box">
+
+                <strong>100%</strong>
+
+                <span>
+                    Functional Coverage
+                </span>
+
+            </div>
+
+            <button id="logoutBtn" class="logout">
+                Sign Out
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <span class="top-label">
+                    SCENARIO-AWARE BIOMEDICAL MONITORING CONTROLLER
+                </span>
+
+                <h2 id="pageTitle">
+                    Dashboard
+                </h2>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div id="profileLetter">
+                    U
+                </div>
+
+                <div>
+                    <b id="profileName">
+                        User
+                    </b>
+
+                    <small id="profileEmail">
+                    </small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="content">
+
+
+            <!-- ================= DASHBOARD VIEW ================= -->
+
+            <div id="dashboardView" class="view">
+
+                <div class="hero">
+
+                    <div>
+
+                        <span class="tag">
+                            LIVE DUT SIMULATION
+                        </span>
+
+                        <h1>
+                            Scenario monitoring,
+                            <span>made simple.</span>
+                        </h1>
+
+                        <p>
+                            The dashboard receives simulated biomedical
+                            inputs and shows how the Scenario-Aware
+                            Controller classifies the person's condition.
+                        </p>
+
+                    </div>
+
+                    <div class="simulation-status">
+
+                        <span></span>
+
+                        LIVE SIMULATION
+
+                    </div>
+
+                </div>
+
+
+                <!-- SCENARIO -->
+
+                <div class="scenario-card">
+
+                    <div class="scenario-icon" id="scenarioIcon">
+                        ✓
+                    </div>
+
+                    <div class="scenario-info">
+
+                        <small>
+                            CURRENT SCENARIO
+                        </small>
+
+                        <h2 id="scenarioName">
+                            Normal
+                        </h2>
+
+                        <p id="scenarioDescription">
+                            All monitored inputs are within the
+                            demonstration range.
+                        </p>
+
+                    </div>
+
+
+                    <div class="scenario-level">
+
+                        <div>
+
+                            <span>Scenario Level</span>
+
+                            <b id="scenarioLevel">
+                                1 / 4
+                            </b>
+
+                        </div>
+
+                        <div class="progress">
+
+                            <span id="progressBar"></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- VITAL CARDS -->
+
+                <div class="vitals-grid">
+
+                    <div class="vital-card">
+
+                        <div class="vital-heading">
+
+                            <span>HEART RATE</span>
+
+                            <b>LIVE</b>
+
+                        </div>
+
+                        <strong id="hrValue">
+                            78
+                        </strong>
+
+                        <small>BPM</small>
+
+                        <div class="line-graph"></div>
+
+                    </div>
+
+
+                    <div class="vital-card">
+
+                        <div class="vital-heading">
+
+                            <span>SpO₂</span>
+
+                            <b>LIVE</b>
+
+                        </div>
+
+                        <strong id="spo2Value">
+                            98
+                        </strong>
+
+                        <small>%</small>
+
+                        <div class="line-graph"></div>
+
+                    </div>
+
+
+                    <div class="vital-card">
+
+                        <div class="vital-heading">
+
+                            <span>BLOOD PRESSURE</span>
+
+                            <b>LIVE</b>
+
+                        </div>
+
+                        <strong id="bpValue">
+                            120/80
+                        </strong>
+
+                        <small>mmHg</small>
+
+                        <div class="line-graph"></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SCENARIO FLOW -->
+
+                <div class="two-column">
+
+                    <div class="card">
+
+                        <div class="card-title">
+
+                            <div>
+
+                                <small>
+                                    SCENARIO PROGRESSION
+                                </small>
+
+                                <h3>
+                                    Person health state
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="scenario-flow">
+
+                            <div class="scenario-step active">
+                                <i>1</i>
+                                <span>Normal</span>
+                            </div>
+
+                            <b>→</b>
+
+                            <div class="scenario-step">
+                                <i>2</i>
+                                <span>Reduced Activity</span>
+                            </div>
+
+                            <b>→</b>
+
+                            <div class="scenario-step">
+                                <i>3</i>
+                                <span>Distress</span>
+                            </div>
+
+                            <b>→</b>
+
+                            <div class="scenario-step">
+                                <i>4</i>
+                                <span>Emergency</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ALERT -->
+
+                    <div class="card alert-card">
+
+                        <div class="card-title">
+
+                            <div>
+
+                                <small>
+                                    ALERT SYSTEM
+                                </small>
+
+                                <h3 id="alertTitle">
+                                    No active alert
+                                </h3>
+
+                            </div>
+
+                            <div id="alertSymbol">
+                                ✓
+                            </div>
+
+                        </div>
+
+                        <p id="alertMessage">
+
+                            The controller is continuously
+                            monitoring the simulated person.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT -->
+
+                <div class="contact-card">
+
+                    <div>
+
+                        <small>
+                            EMERGENCY CONTACT
+                        </small>
+
+                        <h3>
+                            Alert notification number
+                        </h3>
+
+                        <p>
+                            Enter the contact number that should
+                            receive the emergency notification.
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-input">
+
+                        <input
+                            id="phoneNumber"
+                            type="tel"
+                            placeholder="+91 9876543210"
+                        >
+
+                        <button id="savePhone">
+                            Save Contact
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= LIVE VIEW ================= -->
+
+            <div id="liveView" class="view hidden">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <small>
+                            SYSTEMVERILOG DUT STREAM
+                        </small>
+
+                        <h2>
+                            Live Monitoring
+                        </h2>
+
+                        <p>
+                            Biomedical values are generated automatically
+                            from the simulation stream.
+                        </p>
+
+                    </div>
+
+                    <div class="streaming">
+                        ● STREAMING
+                    </div>
+
+                </div>
+
+
+                <div class="live-panel">
+
+                    <div class="heart-display">
+
+                        <div class="pulse-circle">
+                            ♥
+                        </div>
+
+                        <span>
+                            SCENARIO ENGINE ACTIVE
+                        </span>
+
+                    </div>
+
+
+                    <div class="live-values">
+
+                        <div>
+                            <span>Heart Rate</span>
+                            <strong id="liveHR">78</strong>
+                            <small>BPM</small>
+                        </div>
+
+                        <div>
+                            <span>SpO₂</span>
+                            <strong id="liveSpO2">98</strong>
+                            <small>%</small>
+                        </div>
+
+                        <div>
+                            <span>Blood Pressure</span>
+                            <strong id="liveBP">120/80</strong>
+                            <small>mmHg</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <small>
+                        VLSI PROJECT DATA FLOW
+                    </small>
+
+                    <h3>
+                        SystemVerilog Simulation → Web Dashboard
+                    </h3>
+
+                    <div class="data-flow">
+
+                        <span>
+                            Biomedical Inputs
+                        </span>
+
+                        <b>→</b>
+
+                        <span>
+                            RTL DUT
+                        </span>
+
+                        <b>→</b>
+
+                        <span>
+                            Scenario Classifier
+                        </span>
+
+                        <b>→</b>
+
+                        <span>
+                            Alert
+                        </span>
+
+                        <b>→</b>
+
+                        <span>
+                            Website
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= HISTORY ================= -->
+
+            <div id="historyView" class="view hidden">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <small>
+                            PERSON MONITORING RECORD
+                        </small>
+
+                        <h2>
+                            Health History
+                        </h2>
+
+                        <p>
+                            Previous simulated readings are stored
+                            for this person.
+                        </p>
+
+                    </div>
+
+                    <button id="exportBtn" class="outline-btn">
+                        Export CSV
+                    </button>
+
+                </div>
+
+
+                <div class="history-stats">
+
+                    <div>
+                        <strong id="totalReadings">0</strong>
+                        <span>Total Readings</span>
+                    </div>
+
+                    <div>
+                        <strong id="normalCount">0</strong>
+                        <span>Normal</span>
+                    </div>
+
+                    <div>
+                        <strong id="distressCount">0</strong>
+                        <span>Distress</span>
+                    </div>
+
+                    <div>
+                        <strong id="emergencyCount">0</strong>
+                        <span>Emergency</span>
+                    </div>
+
+                </div>
+
+
+                <div class="table-card">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Time</th>
+                                <th>HR</th>
+                                <th>SpO₂</th>
+                                <th>BP</th>
+                                <th>Scenario</th>
+                                <th>Alert</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="historyTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= ALERTS ================= -->
+
+            <div id="alertsView" class="view hidden">
+
+                <div class="section-heading">
+
+                    <small>
+                        SAFETY COMMUNICATION
+                    </small>
+
+                    <h2>
+                        Alert Center
+                    </h2>
+
+                    <p>
+                        Alerts generated by the Scenario-Aware Controller.
+                    </p>
+
+                </div>
+
+
+                <div class="alert-level-grid">
+
+                    <div>
+                        <span>01</span>
+                        <h3>Normal</h3>
+                        <p>Continuous monitoring</p>
+                    </div>
+
+                    <div>
+                        <span>02</span>
+                        <h3>Reduced Activity</h3>
+                        <p>Early warning</p>
+                    </div>
+
+                    <div>
+                        <span>03</span>
+                        <h3>Distress</h3>
+                        <p>Priority alert</p>
+                    </div>
+
+                    <div>
+                        <span>04</span>
+                        <h3>Emergency</h3>
+                        <p>Critical alert</p>
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div id="alertHistory">
+
+                        No alerts generated yet.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= ARCHITECTURE ================= -->
+
+            <div id="architectureView" class="view hidden">
+
+                <div class="section-heading">
+
+                    <small>
+                        PROJECT EXPLANATION
+                    </small>
+
+                    <h2>
+                        System Architecture
+                    </h2>
+
+                    <p>
+                        The complete flow of the Scenario-Aware
+                        Biomedical Monitoring Controller.
+                    </p>
+
+                </div>
+
+
+                <div class="architecture">
+
+                    <div class="arch-row">
+
+                        <div>
+                            ♥
+                            <b>Heart Rate</b>
+                            <small>Input</small>
+                        </div>
+
+                        <div>
+                            ◉
+                            <b>SpO₂</b>
+                            <small>Input</small>
+                        </div>
+
+                        <div>
+                            ◌
+                            <b>Blood Pressure</b>
+                            <small>Input</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="architecture-main">
+
+                        <b>
+                            SIGNAL PROCESSING
+                        </b>
+
+                        <small>
+                            Input validation and preprocessing
+                        </small>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="architecture-main highlight">
+
+                        <b>
+                            SCENARIO-AWARE BIOMEDICAL
+                            MONITORING CONTROLLER
+                        </b>
+
+                        <small>
+                            SystemVerilog RTL DUT
+                        </small>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="arch-row">
+
+                        <div>
+                            <b>Normal</b>
+                            <small>Level 1</small>
+                        </div>
+
+                        <div>
+                            <b>Reduced Activity</b>
+                            <small>Level 2</small>
+                        </div>
+
+                        <div>
+                            <b>Distress</b>
+                            <small>Level 3</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="architecture-main emergency">
+
+                        <b>
+                            EMERGENCY
+                        </b>
+
+                        <small>
+                            Alert generation and safety response
+                        </small>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="arch-row">
+
+                        <div>
+                            <b>Dashboard</b>
+                            <small>Live display</small>
+                        </div>
+
+                        <div>
+                            <b>Alert System</b>
+                            <small>Notification</small>
+                        </div>
+
+                        <div>
+                            <b>History</b>
+                            <small>Record storage</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- UVM -->
+
+                <div class="uvm-card">
+
+                    <small>
+                        VERIFICATION
+                    </small>
+
+                    <h3>
+                        UVM Scenario-Based Verification +
+                        Functional Coverage
+                    </h3>
+
+
+                    <div class="uvm-flow">
+
+                        <span>Generator</span>
+                        →
+                        <span>Driver</span>
+                        →
+                        <span>DUT</span>
+                        →
+                        <span>Monitor</span>
+                        →
+                        <span>Scoreboard</span>
+                        →
+                        <span>Coverage</span>
+
+                    </div>
+
+
+                    <div class="verification-results">
+
+                        <div>
+                            <strong>100</strong>
+                            <span>Test Cases</span>
+                        </div>
+
+                        <div>
+                            <strong>100%</strong>
+                            <span>Functional Coverage</span>
+                        </div>
+
+                        <div>
+                            <strong>100</strong>
+                            <span>Passed</span>
+                        </div>
+
+                        <div>
+                            <strong>0</strong>
+                            <span>Failed</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<div id="toast"></div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
